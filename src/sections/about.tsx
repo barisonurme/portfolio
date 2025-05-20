@@ -10,7 +10,7 @@ const About = () => {
     <div className="max-w-[1640px] flex w-full">
       <div className="w-full flex lg:flex-row flex-col gap-1 lg:gap-8 justify-start items-start z-10 p-12 rounded-lg">
         <div className="flex flex-col gap-4 justify-start items-start py-24">
-          <div className="text-9xl font-semibold">
+          <div className="text-5xl md:text-9xl font-semibold">
             About <span className="primary">Me</span>
           </div>
           <div className="text text-2xl opacity-50">Information About me.</div>
@@ -20,15 +20,17 @@ const About = () => {
 
         <div className="flex flex-col w-full h-full gap-1 lg:gap-8 justify-center items-center ">
           <div className="flex flex-col rounded-md text-2xl leading-relaxed py-0 lg:py-24">
-            <span className="font-semibold">Summary</span>
+            <span className="font-semibold primary">Summary</span>
             I began my career in 2015 as a Graphic Designer, where I spent
             several years shaping visual identities and crafting digital and
             printable assets across diverse mediums.
             <br />
             <br />
-            <span className="font-semibold">Front-End Development</span> to In
-            2022, I transitioned into Front-End Development merge my design
-            background with my growing passion for building intuitive and
+            <span className="font-semibold primary">
+              Front-End Development
+            </span>{" "}
+            to In 2022, I transitioned into Front-End Development merge my
+            design background with my growing passion for building intuitive and
             engaging user interfaces. Currently based in Ankara, I focus on
             developing responsive, accessible, and visually refined web
             applications.
