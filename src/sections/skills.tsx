@@ -54,21 +54,22 @@ const Skills = () => {
   });
 
   return (
-    <div className="max-w-[1640px] flex w-full justify-center">
-      <div className="flex flex-col gap-4 justify-center items-center z-10 p-4 border divider rounded-lg px-24 pb-24">
+    <div className="max-w-[1640px] flex w-full justify-center p-4 lg:p-0">
+      <div className="flex flex-col gap-4 justify-center items-center z-10 p-4 border divider rounded-lg px-4 lg:px-24 pb-24">
         <div className="flex flex-col gap-4 justify-center items-center -translate-y-1/2 bg-[#0e100f]">
-          <div className="text-9xl font-semibold">
+          <div className="text-9xl font-semibold text-center">
             Tech <span className="primary">Stack</span>
           </div>
-          <div className="text text-2xl opacity-50">
+          <div className="text text-2xl opacity-50  text-center">
             Theese are some of technologies i'm using.
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center p-4 gap-8 rounded-md">
-          <div className="flex gap-8">
+        <div className="flex flex-col w-full justify-center items-center p-4 gap-8 rounded-md">
+          <div className="flex gap-8 w-full justify-center items-center">
             {skillTags.map((tag) => (
               <button
+                key={tag}
                 onClick={() => setSelectedTags(tag)}
                 className={`${
                   selectedTags === tag ? "divider" : "border-[transparent]"
@@ -85,7 +86,7 @@ const Skills = () => {
           >
             {filteredSkills.map((skill) => (
               <div
-                className="col-span-3 w-44 h-16 flex justify-center items-center bg-zinc-900 rounded-md font-semibold "
+                className="col-span-3 max-w-44 text-center h-16 flex justify-center items-center bg-zinc-900 rounded-md font-semibold "
                 key={skill.label}
               >
                 {skill.label}

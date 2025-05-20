@@ -95,18 +95,20 @@ const WorkComp = ({
   return (
     <div
       ref={containerRef}
-      className={`anim-${work.projectName} !z-50 flex flex-col ${
+      className={`anim-${work.projectName} !z-50 flex flex-col px-4 md:px-24 ${
         wrapperClass ?? ""
       } w-full items-start h-[924px]`}
     >
-      <div className="flex w-full">
+      <div className="flex flex-col lg:flex-row w-full">
         <div
           className={`${
             textWrapperClass ?? ""
-          }  justify-center grow flex flex-col w-1/2`}
+          }  justify-center grow flex flex-col w-full lg:w-1/2`}
         >
-          <p className="primary text-5xl font-semibold">{work.projectName}</p>
-          <p className="text-8xl font-semibold mt-2">{work.desc}</p>
+          <p className="primary text-5xl lg:text-5xl font-semibold">
+            {work.projectName}
+          </p>
+          <p className="text-5xl lg:text-8xl font-semibold mt-2">{work.desc}</p>
 
           <div className="grid gap-2 mt-12 grid-cols-12 pr-12">
             {work.techStack.map((stack) => (
@@ -122,7 +124,7 @@ const WorkComp = ({
           </div>
         </div>
 
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <img
             className="cursor-pointer hover:opacity-50 opacity-40 duration-500 hover:saturate-100 flex h-full w-full transition-all rounded-sm object-cover saturate-0"
             src="https://ui.shadcn.com/placeholder.svg"
