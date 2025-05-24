@@ -101,7 +101,7 @@ const Contact = () => {
               htmlFor="email"
               className="absolute left-3 top-1 text-zinc-500 text-base transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-lg peer-focus:top-1 peer-focus:text-base peer-focus:text-primary"
             >
-              Your Name{" "}
+              Your Email{" "}
               {errors.email && (
                 <span className="text-red-500 text-sm">{errors.email[0]}</span>
               )}
