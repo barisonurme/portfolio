@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
+import { copyString } from "../utils/text-utils";
 
 type FormData = z.infer<typeof schema>;
 type FormErrors = Partial<Record<keyof FormData, string[]>>;
@@ -60,7 +61,15 @@ const Contact = () => {
         </div>
         <div className="box flex justify-center items-center fonts opacity-50 text-2xl">
           You can reach me via the contact form or, alternatively, send an email
-          directly to barisonurme@me.com.
+          directly to &nbsp;
+          <span
+            onClick={() => copyString("barisonurme@me.com")}
+            className="underline font-semibold cursor-pointer"
+          >
+            {" "}
+            barisonurme@me.com
+          </span>
+          .
         </div>
 
         {/* Contact Form */}
