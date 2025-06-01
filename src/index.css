@@ -44,3 +44,7 @@ body {
 .divider {
   border-color: #313332 !important;
 }
+
+body.lock-scroll {
+  overflow: hidden;
+}

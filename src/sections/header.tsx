@@ -1,4 +1,5 @@
 /* Format Utils */
+import HamburgerMenu from "../components/hamburger-menu";
 import { TextUtils } from "../utils";
 
 /* Constants */
@@ -31,10 +32,15 @@ const Header = ({
 
           <button
             onClick={() => navigationClickHandler("contact")}
-            className="border-1 p-2 px-4 rounded-2xl cursor-pointer"
+            className="border-1 p-2 px-4 rounded-2xl cursor-pointer md:block hidden"
           >
             Contact
           </button>
+
+          <HamburgerMenu
+            portfolioSections={portfolioSections}
+            navigationClickHandler={navigationClickHandler}
+          />
         </div>
         {/* Divider */}
         <div className="flex w-full border-b divider" />
