@@ -105,7 +105,7 @@ const WorkComp = ({
           id: "example",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 90%",
+            start: "top 100%",
             end: "bottom 90%",
             scrub: true, // smoothly link scroll to animation progress
           },
@@ -205,7 +205,7 @@ const Works = () => {
   }, []);
 
   return (
-    <div className="max-w-[1640px] relative">
+    <div id="projects" className="max-w-[1640px] relative">
       <div className="w-full flex flex-col gap-24 justify-center items-center z-10 p-12">
         <div ref={worksTitleRef} className="flex flex-col gap-4">
           <div className="box flex justify-center items-center fonts text-5xl">

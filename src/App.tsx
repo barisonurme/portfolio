@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 // ScrollSmoother requires ScrollTrigger
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
@@ -14,7 +15,26 @@ import Contact from "./sections/contact";
 import Header from "./sections/header";
 
 function App() {
-  gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
+  gsap.registerPlugin(
+    useGSAP,
+    ScrollTrigger,
+    ScrollSmoother,
+    SplitText,
+    ScrollToPlugin
+  );
+
+  const navigationClickHandler = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const y = target.getBoundingClientRect().top + window.scrollY - 200;
+
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: y,
+      ease: "power2.out",
+    });
+  };
 
   useEffect(() => {
     document.fonts.ready.then(() => {
@@ -54,10 +74,10 @@ function App() {
         }}
       />
 
-      <div id="smooth-content" className="lg:p-0 p-12">
+      <div id="smooth-content" className="lg:p-0 p-1">
         <div className="flex w-full h-screen justify-center items-start">
           {/* Header Section */}
-          <Header />
+          <Header navigationClickHandler={navigationClickHandler} />
         </div>
 
         {/* Works Section */}

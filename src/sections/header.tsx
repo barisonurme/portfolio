@@ -2,9 +2,13 @@
 import { TextUtils } from "../utils";
 
 /* Constants */
-const portfolioSections = ["projects", "skills", "blog", "about"];
+const portfolioSections = ["projects", "skills", "about"];
 
-const Header = () => {
+const Header = ({
+  navigationClickHandler,
+}: {
+  navigationClickHandler: (id: string) => void;
+}) => {
   return (
     <header className="flex flex-col h-full w-full justify-center items-center px-4 md:px-24">
       <section className="max-w-[1640px] h-12 flex w-full flex-col">
@@ -16,6 +20,7 @@ const Header = () => {
           <div className="md:flex justify-start grow gap-8 hidden">
             {portfolioSections.map((section) => (
               <button
+                onClick={() => navigationClickHandler(section)}
                 className="font-semibold opacity-50 hover:opacity-100 duration-500 cursor-pointer"
                 key={section}
               >
@@ -24,7 +29,10 @@ const Header = () => {
             ))}
           </div>
 
-          <button className="border-1 p-2 px-4 rounded-2xl cursor-pointer">
+          <button
+            onClick={() => navigationClickHandler("contact")}
+            className="border-1 p-2 px-4 rounded-2xl cursor-pointer"
+          >
             Contact
           </button>
         </div>

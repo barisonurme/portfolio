@@ -81,7 +81,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="max-w-[1640px] flex w-full bg-[#0e100f] z-50">
+    <div id="about" className="max-w-[1640px] flex w-full bg-[#0e100f] z-50">
       <div className="w-full flex lg:flex-row flex-col gap-1 lg:gap-8 justify-start items-start z-10 p-12 rounded-lg">
         <div className="flex flex-col gap-4 justify-start items-start py-24">
           <div className="text-5xl lg:text-9xl font-semibold">
