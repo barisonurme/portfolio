@@ -55,21 +55,20 @@ const Contact = () => {
 
   return (
     <div className="max-w-[1640px] flex w-full justify-center">
-      <div className="flex w-full flex-col justify-center items-center gap-8 mb-44 px-4 md:px-24">
+      <div className="flex w-full flex-col md:justify-center md:items-center  justify-start items-start gap-2 mb-44 px-12 md:px-24">
         <div className="box flex justify-center items-center font-semibold text-5xl md:text-7xl">
           Contact <span className="primary">Form</span>
         </div>
         <div className="box flex justify-center items-center fonts opacity-50 text-2xl">
           You can reach me via the contact form or, alternatively, send an email
-          directly to &nbsp;
-          <span
-            onClick={() => copyString("barisonurme@me.com")}
-            className="underline font-semibold cursor-pointer"
-          >
-            {" "}
-            barisonurme@me.com
-          </span>
-          .
+          directly to
+        </div>
+        <div
+          className="box flex justify-center items-center underline font-semibold cursor-pointer opacity-50 text-2xl"
+          onClick={() => copyString("barisonurme@me.com")}
+        >
+          {" "}
+          barisonurme@me.com
         </div>
 
         {/* Contact Form */}
