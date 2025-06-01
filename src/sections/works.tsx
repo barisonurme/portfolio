@@ -7,8 +7,11 @@ import { useEffect, useRef } from "react";
 
 /* Types */
 type TWorkType = {
+  imgPath?: string;
   projectName: string;
   desc: string;
+  twColor?: string;
+  longDesc?: string;
   techStack: (
     | "reactJs"
     | "firebase"
@@ -16,6 +19,7 @@ type TWorkType = {
     | "typescript"
     | "drizzle"
     | "postgre"
+    | "React Native"
   )[];
 };
 
@@ -24,17 +28,34 @@ const works: TWorkType[] = [
   {
     projectName: "TrainMate",
     desc: "Track your progress with ease.",
+    longDesc: `TrainMate is web application for users who want's to track their proggress when working out.`,
     techStack: ["reactJs", "firebase"],
+    imgPath: "public/projects/trainmate.gif",
+    twColor: "text-[#4428f3]",
+  },
+  {
+    projectName: "Chappter",
+    desc: "Real Time Message App.",
+    techStack: ["React Native", "firebase"],
+    longDesc: `Chappter real-time chat applications developed with React Native.`,
+    imgPath: "public/projects/chappter.gif",
+    twColor: "text-[#1e90ff]",
   },
   {
     projectName: "OrderFood",
     desc: "Solution for Restaurants",
     techStack: ["nextJs", "typescript", "drizzle", "postgre"],
+    longDesc: `Order Food Project helps restaurants easily add and update food prices. It also lets them create customized websites and menu designs to showcase their offerings.`,
+    imgPath: "public/projects/orderFood.jpg",
+    twColor: "text-[#fc0029]",
   },
   {
     projectName: "Pizzaria",
     desc: "Order&Track",
     techStack: ["reactJs", "firebase"],
+    longDesc: `Pizzaria designed to only for Pizza restaurans to take order from customers and track it from admin panel.`,
+    imgPath: "public/projects/pizzaria.jpg",
+    twColor: "text-[#ff002c]",
   },
 ];
 
@@ -99,24 +120,33 @@ const WorkComp = ({
         wrapperClass ?? ""
       } w-full items-start h-[924px]`}
     >
-      <div className="flex flex-col lg:flex-row w-full">
+      <div className="flex flex-col lg:flex-row w-full group gap-4">
         <div
           className={`${
             textWrapperClass ?? ""
           }  justify-center grow flex flex-col w-full lg:w-1/2`}
         >
-          <p className="primary text-5xl lg:text-5xl font-semibold">
+          <p
+            className={`text-5xl lg:text-5xl font-semibold ${
+              work.twColor ?? "primary"
+            }`}
+          >
             {work.projectName}
           </p>
           <p className="text-5xl lg:text-8xl font-semibold mt-2">{work.desc}</p>
+          {work.longDesc && (
+            <p className="text-1xl lg:text-2xl mt-2 opacity-50">
+              {work.longDesc}
+            </p>
+          )}
 
           <div className="grid gap-2 mt-12 grid-cols-12 pr-12">
             {work.techStack.map((stack) => (
               <div
-                className="border opacity-50 p-2 px-4 rounded-md text-sm col-span-2"
+                className="border opacity-50 p-2 px-4 rounded-md text-sm col-span-3"
                 key={`${work.projectName}-${stack}`}
               >
-                <div className="justify-center items-center flex w-full">
+                <div className="justify-center items-center flex w-full whitespace-nowrap">
                   {TextUtils.formatStringToTitleCase(stack)}
                 </div>
               </div>
@@ -124,10 +154,10 @@ const WorkComp = ({
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2">
+        <div className="w-full h-[420px] lg:w-1/2">
           <img
-            className="cursor-pointer hover:opacity-50 opacity-40 duration-500 hover:saturate-100 flex h-full w-full transition-all rounded-sm object-cover saturate-0"
-            src="https://ui.shadcn.com/placeholder.svg"
+            className="cursor-pointer duration-500 flex h-full w-full transition-all rounded-sm object-cover"
+            src={work.imgPath || "https://ui.shadcn.com/placeholder.svg"}
           />
         </div>
       </div>
@@ -174,13 +204,11 @@ const Works = () => {
       <div className="w-full flex flex-col gap-24 justify-center items-center z-10 p-12">
         <div ref={worksTitleRef} className="flex flex-col gap-4">
           <div className="box flex justify-center items-center fonts text-5xl">
-            A curated selection of my recent works.
+            A curated selection of my personal works.
           </div>
           <div className="box flex justify-center items-center fonts opacity-50">
-            As a Front-End Developer, I specialize in web development, UI/UX
-            design and game development, <br />
-            creating visually engaging, responsive and interactive experiences
-            across various platforms.
+            The projects listed below showcase personal works I have done
+            outside of my professional career.
           </div>
         </div>
       </div>
