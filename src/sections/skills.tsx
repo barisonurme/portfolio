@@ -69,14 +69,16 @@ const Skills = () => {
         </div>
 
         <div className="flex flex-col w-full justify-center items-center p-4 gap-8 rounded-md">
-          <div className="flex gap-8 w-full justify-center items-center">
+          <div className="flex gap-1 md:gap-8 w-full justify-center items-center">
             {skillTags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => setSelectedTags(tag)}
                 className={`${
-                  selectedTags === tag ? "divider" : "border-[transparent]"
-                } border p-2 px-4 text-xs opacity-50 rounded-md cursor-pointer`}
+                  selectedTags === tag
+                    ? "divider text-[var(--color-primary)]"
+                    : "border-[transparent]"
+                } border p-2 px-4 text-xs opacity-50 rounded-md cursor-pointer font-semibold`}
               >
                 <p>{tag}</p>
               </button>
@@ -85,14 +87,16 @@ const Skills = () => {
 
           <div
             ref={animationParent}
-            className="grid grid-cols-12 gap-8 opacity-50"
+            className="grid grid-cols-6 md:grid-cols-12 gap-8 opacity-100 w-full"
           >
             {filteredSkills.map((skill) => (
               <div
-                className="col-span-3 max-w-44 text-center h-16 flex justify-center items-center bg-zinc-900 rounded-md font-semibold "
+                className="col-span-3 w-full text-center h-16 flex justify-center items-center bg-zinc-900/30 opacity-50 hover:opacity-100 duration-500 rounded-md font-semibold "
                 key={skill.label}
               >
-                {skill.label}
+                <p className="hover:text-[var(--color-primary)] select-none">
+                  {skill.label}
+                </p>
               </div>
             ))}
           </div>
