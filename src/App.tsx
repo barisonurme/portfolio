@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     document.fonts.ready.then(() => {
       ScrollSmoother.create({
-        smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+        smooth: 0.1, // how long (in seconds) it takes to "catch up" to the native scroll position
         effects: true, // looks for data-speed and data-lag attributes on elements
         smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
       });
@@ -46,14 +46,22 @@ function App() {
       id="smooth-wrapper"
       className="flex flex-col w-full min-h-screen font-montserrat"
     >
-      <div id="smooth-content">
+      {/* Film Grain */}
+      <div
+        className="z-50 bg-repeat flex w-full h-screen absolute pointer-events-none opacity-50"
+        style={{
+          backgroundImage: 'url("/images/filmGrain.png")',
+        }}
+      />
+
+      <div id="smooth-content" className="lg:p-0 p-12">
         <div className="flex w-full h-screen justify-center items-start">
           {/* Header Section */}
           <Header />
         </div>
 
         {/* Works Section */}
-        <div className="flex w-full justify-center items-center mt-44">
+        <div className="flex w-full justify-center items-center mt-44 z-50">
           <Works />
         </div>
 

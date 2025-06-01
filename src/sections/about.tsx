@@ -48,8 +48,8 @@ const About = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 50%",
-            end: "bottom 50%",
+            start: "top 80%",
+            end: "bottom 80%",
             toggleActions: "play none none reverse",
             scrub: true,
           },
@@ -70,8 +70,8 @@ const About = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 50%",
-            end: "bottom 50%",
+            start: "top 80%",
+            end: "bottom 80%",
             toggleActions: "play none none reverse",
             scrub: true,
           },
@@ -81,10 +81,10 @@ const About = () => {
   }, []);
 
   return (
-    <div className="max-w-[1640px] flex w-full">
+    <div className="max-w-[1640px] flex w-full bg-[#0e100f] z-50">
       <div className="w-full flex lg:flex-row flex-col gap-1 lg:gap-8 justify-start items-start z-10 p-12 rounded-lg">
         <div className="flex flex-col gap-4 justify-start items-start py-24">
-          <div className="text-5xl md:text-9xl font-semibold">
+          <div className="text-5xl lg:text-9xl font-semibold">
             About <span className="primary">Me</span>
           </div>
           <div className="text text-2xl opacity-50">Information About me.</div>

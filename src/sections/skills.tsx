@@ -55,13 +55,10 @@ const Skills = () => {
 
   return (
     <div className="max-w-[1640px] flex w-full justify-center p-4 lg:p-0">
-      <div className="flex flex-col gap-4 justify-center items-center z-10 p-4 border divider rounded-lg px-4 lg:px-24 pb-24">
-        <div className="flex flex-col gap-4 justify-center items-center -translate-y-1/2 bg-[#0e100f]">
-          <div className="text-5xl md:text-9xl font-semibold text-center">
-            Tech{" "}
-            <span className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] inline-block text-transparent bg-clip-text">
-              Stack
-            </span>
+      <div className="flex flex-col gap-4 justify-center items-center z-10 p-4 border divider rounded-lg px-4 lg:px-24 pb-24 bg-[#0e100f] ">
+        <div className="flex flex-col gap-4 justify-center items-center -translate-y-1/2">
+          <div className="text-5xl lg:text-9xl font-semibold text-center">
+            Tech <span className="primary">Stack</span>
           </div>
           <div className="text text-2xl opacity-50  text-center">
             Theese are some of technologies i'm using.

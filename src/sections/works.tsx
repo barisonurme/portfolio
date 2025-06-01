@@ -11,6 +11,7 @@ type TWorkType = {
   projectName: string;
   desc: string;
   twColor?: string;
+  hexColor?: string;
   longDesc?: string;
   techStack: (
     | "reactJs"
@@ -30,7 +31,8 @@ const works: TWorkType[] = [
     desc: "Track your progress with ease.",
     longDesc: `TrainMate is web application for users who want's to track their proggress when working out.`,
     techStack: ["reactJs", "firebase"],
-    imgPath: "public/projects/trainmate.gif",
+    imgPath: "/projects/trainmate.gif",
+    hexColor: "#4428f3",
     twColor: "text-[#4428f3]",
   },
   {
@@ -38,7 +40,8 @@ const works: TWorkType[] = [
     desc: "Real Time Message App.",
     techStack: ["React Native", "firebase"],
     longDesc: `Chappter real-time chat applications developed with React Native.`,
-    imgPath: "public/projects/chappter.gif",
+    imgPath: "/projects/chappter.gif",
+    hexColor: "#1e90ff",
     twColor: "text-[#1e90ff]",
   },
   {
@@ -46,7 +49,8 @@ const works: TWorkType[] = [
     desc: "Solution for Restaurants",
     techStack: ["nextJs", "typescript", "drizzle", "postgre"],
     longDesc: `Order Food Project helps restaurants easily add and update food prices. It also lets them create customized websites and menu designs to showcase their offerings.`,
-    imgPath: "public/projects/orderFood.jpg",
+    imgPath: "/projects/orderFood.jpg",
+    hexColor: "#fc0029",
     twColor: "text-[#fc0029]",
   },
   {
@@ -54,7 +58,8 @@ const works: TWorkType[] = [
     desc: "Order&Track",
     techStack: ["reactJs", "firebase"],
     longDesc: `Pizzaria designed to only for Pizza restaurans to take order from customers and track it from admin panel.`,
-    imgPath: "public/projects/pizzaria.jpg",
+    imgPath: "/projects/pizzaria.jpg",
+    hexColor: "#ff002c",
     twColor: "text-[#ff002c]",
   },
 ];
@@ -118,13 +123,13 @@ const WorkComp = ({
       ref={containerRef}
       className={`anim-${work.projectName} !z-50 flex flex-col px-4 md:px-24 ${
         wrapperClass ?? ""
-      } w-full items-start h-[924px]`}
+      } w-full items-center fke h-[1000px]`}
     >
-      <div className="flex flex-col lg:flex-row w-full group gap-4">
+      <div className="flex flex-col lg:flex-row w-full h-full items-start group gap-4 z-50">
         <div
           className={`${
             textWrapperClass ?? ""
-          }  justify-center grow flex flex-col w-full lg:w-1/2`}
+          }  justify-center  flex flex-col w-full lg:w-1/2 `}
         >
           <p
             className={`text-5xl lg:text-5xl font-semibold ${
@@ -200,7 +205,7 @@ const Works = () => {
   }, []);
 
   return (
-    <div className="max-w-[1640px]">
+    <div className="max-w-[1640px] relative">
       <div className="w-full flex flex-col gap-24 justify-center items-center z-10 p-12">
         <div ref={worksTitleRef} className="flex flex-col gap-4">
           <div className="box flex justify-center items-center fonts text-5xl">
@@ -212,7 +217,7 @@ const Works = () => {
           </div>
         </div>
       </div>
-      <section className="flex flex-col gap-24 section mt-12">
+      <section className="flex flex-col section mt-12">
         {/*  */}
         {/*  */}
         {/*  */}
