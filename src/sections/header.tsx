@@ -11,8 +11,8 @@ const Header = ({
   navigationClickHandler: (id: string) => void;
 }) => {
   return (
-    <header className="flex flex-col h-full w-full justify-center items-center px-4 md:px-24">
-      <section className="max-w-[1640px] h-12 flex w-full flex-col">
+    <header className=" absolute z-40 flex flex-col h-full w-full justify-center items-center">
+      <section className="max-w-[1640px] h-12 flex w-full flex-col px-4 md:px-24">
         <div className="flex w-full justify-between items-center p-4 gap-8">
           <button className="text-2xl font-black cursor-pointer hover:opacity-50 opacity-100 duration-500">
             BRSNRM
@@ -59,12 +59,14 @@ const Header = ({
       </section>
 
       {/* Scroll Down Button */}
-      <div className="h-44 flex w-full justify-center items-center">
+      <div className="z-40 h-44 flex w-full justify-center items-center">
         <button className="cursor-pointer flex flex-col">
           <p>See More</p>
           <p className="rotate-90">➞</p>
         </button>
       </div>
+
+      <div className="absolute bottom-0 bg-gradient-to-t from-[#0e100f] to-[#0e100f00] h-96 flex w-full" />
     </header>
   );
 };

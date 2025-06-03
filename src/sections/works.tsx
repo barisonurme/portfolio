@@ -207,7 +207,7 @@ const Works = () => {
   return (
     <div id="projects" className="max-w-[1640px] relative">
       <div className="w-full flex flex-col gap-24 justify-center items-center z-10 p-12">
-        <div ref={worksTitleRef} className="flex flex-col gap-4">
+        <div ref={worksTitleRef} className="flex flex-col gap-4 z-50">
           <div className="box flex justify-center items-center fonts text-5xl">
             A curated selection of my personal works.
           </div>

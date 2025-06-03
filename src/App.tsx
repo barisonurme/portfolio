@@ -13,6 +13,7 @@ import Skills from "./sections/skills";
 import About from "./sections/about";
 import Contact from "./sections/contact";
 import Header from "./sections/header";
+import HeaderBgAnimation from "./sections/header/header-bg-animation";
 
 function App() {
   gsap.registerPlugin(
@@ -39,7 +40,7 @@ function App() {
   useEffect(() => {
     document.fonts.ready.then(() => {
       ScrollSmoother.create({
-        smooth: 0.1, // how long (in seconds) it takes to "catch up" to the native scroll position
+        smooth: 1.5, // how long (in seconds) it takes to "catch up" to the native scroll position
         effects: true, // looks for data-speed and data-lag attributes on elements
         smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
       });
@@ -77,7 +78,12 @@ function App() {
       <div id="smooth-content" className="lg:p-0 p-1">
         <div className="flex w-full h-screen justify-center items-start">
           {/* Header Section */}
-          <Header navigationClickHandler={navigationClickHandler} />
+          <div className="relative w-full h-full">
+            <Header navigationClickHandler={navigationClickHandler} />
+            <div className="opacity-30">
+              <HeaderBgAnimation />
+            </div>
+          </div>
         </div>
 
         {/* Works Section */}
