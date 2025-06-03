@@ -44,7 +44,7 @@ const HamburgerMenu = ({
           BRSNRM
         </button>
 
-        {portfolioSections.map((section) => {
+        {[...portfolioSections, "contact"].map((section) => {
           return (
             <div
               onClick={() => {
