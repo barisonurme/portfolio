@@ -121,7 +121,7 @@ const WorkComp = ({
   return (
     <div
       ref={containerRef}
-      className={`anim-${work.projectName} !z-50 flex flex-col px-4 md:px-24 ${
+      className={`anim-${work.projectName} !z-50 flex flex-col px-24 md:px-24 ${
         wrapperClass ?? ""
       } w-full items-center fke h-[1000px]`}
     >
@@ -148,7 +148,7 @@ const WorkComp = ({
           <div className="grid gap-2 mt-12 grid-cols-12 pr-12">
             {work.techStack.map((stack) => (
               <div
-                className="border opacity-50 p-2 px-4 rounded-md text-sm col-span-3"
+                className="border opacity-50 p-2 px-4 rounded-md text-sm col-span-6 md:col-span-3"
                 key={`${work.projectName}-${stack}`}
               >
                 <div className="justify-center items-center flex w-full whitespace-nowrap">
