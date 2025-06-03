@@ -15,14 +15,7 @@ import Contact from "./sections/contact";
 import Header from "./sections/header";
 import HeaderBgAnimation from "./sections/header/header-bg-animation";
 
-/* Firebase */
-// import { initializeApp } from "firebase/app";
-// import { firebaseConfig } from "./configs/firebase-config";
-
 function App() {
-  // Initialize Firebase
-  // const app = initializeApp(firebaseConfig);
-
   gsap.registerPlugin(
     useGSAP,
     ScrollTrigger,

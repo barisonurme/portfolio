@@ -2,7 +2,12 @@ import { useState } from "react";
 import { z } from "zod";
 import { copyString } from "../utils/text-utils";
 
-type FormData = z.infer<typeof schema>;
+/* Firebase */
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../configs/firebase-config";
+import useContactForm from "../service/useContactForm";
+
+export type FormData = z.infer<typeof schema>;
 type FormErrors = Partial<Record<keyof FormData, string[]>>;
 
 const schema = z.object({
@@ -12,6 +17,10 @@ const schema = z.object({
 });
 
 const Contact = () => {
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const { fetchContactForm, isLoading, isError } = useContactForm(app);
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -49,7 +58,8 @@ const Contact = () => {
     }
 
     setErrors({});
-    console.log("Form submitted successfully:", result.data);
+    fetchContactForm(result.data);
+    console.log("xxx", result.data);
     // proceed with sending the data or whatever comes next
   };
 
@@ -73,11 +83,14 @@ const Contact = () => {
 
         {/* Contact Form */}
         <form
-          className="flex flex-col gap-4 text-lg w-full"
+          className={`flex flex-col gap-4 text-lg w-full ${
+            isLoading ? "animate-pulse" : ""
+          }`}
           onSubmit={handleSubmit}
         >
           <div className="relative w-full">
             <input
+              disabled={isLoading}
               type="text"
               name="name"
               value={formData.name}
@@ -91,13 +104,16 @@ const Contact = () => {
             >
               Your Name{" "}
               {errors.name && (
-                <span className="text-red-500 text-sm">{errors.name[0]}</span>
+                <span className="text-red-500 text-sm italic">
+                  {errors.name[0]}
+                </span>
               )}
             </label>
           </div>
 
           <div className="relative w-full">
             <input
+              disabled={isLoading}
               type="text"
               name="email"
               value={formData.email}
@@ -111,13 +127,16 @@ const Contact = () => {
             >
               Your Email{" "}
               {errors.email && (
-                <span className="text-red-500 text-sm">{errors.email[0]}</span>
+                <span className="text-red-500 text-sm italic">
+                  {errors.email[0]}
+                </span>
               )}
             </label>
           </div>
 
           <div className="relative w-full">
             <textarea
+              disabled={isLoading}
               name="message"
               placeholder=" "
               rows={5}
@@ -131,7 +150,7 @@ const Contact = () => {
             >
               Your Message{" "}
               {errors.message && (
-                <span className="text-red-500 text-sm">
+                <span className="text-red-500 text-sm italic">
                   {errors.message[0]}
                 </span>
               )}
@@ -139,11 +158,21 @@ const Contact = () => {
           </div>
 
           <button
+            disabled={isLoading}
             type="submit"
-            className="bg-primary text-white p-3 rounded-md font-semibold hover:opacity-90 transition-all cursor-pointer"
+            className={`bg-primary text-white p-3 rounded-md font-semibold transition-all ${
+              isLoading
+                ? "opacity-50 hover:opacity-60 animate-pulse"
+                : "cursor-pointer hover:opacity-90"
+            }`}
           >
-            Send Message
+            {isLoading ? "Sending..." : "Send Message"}
           </button>
+          {isError && (
+            <span className="flex w-full justify-center items-center text-red-500 text-sm italic">
+              Error while sending form
+            </span>
+          )}
         </form>
       </div>
     </div>
