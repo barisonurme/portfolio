@@ -60,7 +60,10 @@ const Header = ({
 
       {/* Scroll Down Button */}
       <div className="z-40 h-44 flex w-full justify-center items-center">
-        <button className="cursor-pointer flex flex-col">
+        <button
+          onClick={() => navigationClickHandler("projects")}
+          className="cursor-pointer flex flex-col justify-center"
+        >
           <p>See More</p>
           <p className="rotate-90">➞</p>
         </button>
