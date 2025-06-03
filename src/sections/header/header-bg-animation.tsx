@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import "./header-bg.css";
 
-type Props = {};
-
-const HeaderBgAnimation = (props: Props) => {
+const HeaderBgAnimation = () => {
   useEffect(() => {
     const interBubble = document.querySelector<HTMLDivElement>(".interactive");
     if (!interBubble) return;
