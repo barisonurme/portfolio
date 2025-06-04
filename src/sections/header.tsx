@@ -3,7 +3,7 @@ import HamburgerMenu from "../components/hamburger-menu";
 import { TextUtils } from "../utils";
 
 /* Constants */
-const portfolioSections = ["projects", "skills", "about"];
+export const portfolioSections = ["projects", "skills", "about"];
 
 const Header = ({
   navigationClickHandler,

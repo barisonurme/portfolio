@@ -14,6 +14,8 @@ import About from "./sections/about";
 import Contact from "./sections/contact";
 import Header from "./sections/header";
 import HeaderBgAnimation from "./sections/header/header-bg-animation";
+import ScrollToTopButton from "./components/scroll-to-tab";
+import ScrollPercentage from "./components/scroll-percentage";
 
 function App() {
   gsap.registerPlugin(
@@ -67,6 +69,10 @@ function App() {
       id="smooth-wrapper"
       className="flex flex-col w-full min-h-screen font-montserrat"
     >
+      {/* Scroll to top */}
+      <ScrollToTopButton navigationClickHandler={navigationClickHandler} />
+      <ScrollPercentage navigationClickHandler={navigationClickHandler} />
+
       {/* Film Grain */}
       <div
         className="z-50 bg-repeat flex w-full h-screen absolute pointer-events-none opacity-50"
@@ -78,7 +84,7 @@ function App() {
       <div id="smooth-content" className="lg:p-0 p-1">
         <div className="flex w-full h-screen justify-center items-start">
           {/* Header Section */}
-          <div className="relative w-full h-full">
+          <div id="home" className="relative w-full h-full">
             <Header navigationClickHandler={navigationClickHandler} />
             <div className="opacity-30">
               <HeaderBgAnimation />
