@@ -38,7 +38,7 @@ const ScrollPercentage = ({
       </div>
       <div className="hidden md:flex z-40 absolute top-0 bg-gradient-to-b from-[#0e100f] to-[#0e100f00] h-44  w-full pointer-events-none" />
 
-      <div className="flex justify-end w-full p-4">
+      <div className="absolute top-0 flex justify-end w-full p-4">
         <HamburgerMenu
           portfolioSections={portfolioSections}
           navigationClickHandler={navigationClickHandler}
