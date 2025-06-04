@@ -36,11 +36,11 @@ const HamburgerMenu = ({
 
       {/* Hamburger Menu Content */}
       <div
-        className={` flex flex-col gap-4 w-full  justify-center items-start p-12 h-screen absolute top-0 left-0 z-50 bg-red duration-500 bg-zinc-800 ${
+        className={` flex flex-col gap-4 w-full  justify-center items-start p-12 h-dvh absolute top-0 left-0 z-50 bg-red duration-500 backdrop-blur-xl bg-zinc-900/40  ${
           showMenu ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <button className="text-4xl font-black cursor-pointer hover:opacity-50 opacity-100 duration-500 mb-12">
+        <button className="text-4xl font-black cursor-pointer-target hover:opacity-50 opacity-100 duration-500 mb-12">
           BRSNRM
         </button>
 
@@ -61,7 +61,7 @@ const HamburgerMenu = ({
 
         <button
           onClick={() => setShowMenu(false)}
-          className="flex gap-2 border rounded-xl p-4 px-8 mt-4 cursor-pointer hover:opacity-50 opacity-100 duration-500 mb-12"
+          className="flex gap-2 border rounded-xl p-4 px-8 mt-4 cursor-pointer-target hover:opacity-50 opacity-100 duration-500 mb-12"
         >
           close <X />
         </button>

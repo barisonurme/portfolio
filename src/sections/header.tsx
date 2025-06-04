@@ -46,7 +46,7 @@ const Header = ({
         <div className="flex w-full border-b divider" />
       </section>
 
-      <section className="flex flex-col justify-center items-start md:items-center grow">
+      <section className="flex flex-col justify-center items-start md:items-center grow p-4">
         <div className="headline primary text-5xl font-semibold">
           Building DOM Elements
         </div>
