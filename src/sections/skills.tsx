@@ -87,7 +87,7 @@ const Skills = () => {
 
           <div
             ref={animationParent}
-            className="grid grid-cols-6 md:grid-cols-12 gap-8 opacity-100 w-full"
+            className="grid grid-cols-6 md:grid-cols-12 gap-8 opacity-100 w-full overflow-hidden"
           >
             {filteredSkills.map((skill) => (
               <div
