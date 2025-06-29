@@ -59,8 +59,8 @@ const Skills = () => {
       className="max-w-[1640px] flex w-full justify-center p-4 lg:p-0"
     >
       <div className="flex flex-col gap-4 justify-center items-center z-10 p-4 border divider rounded-lg px-4 lg:px-24 pb-24">
-        <div className="flex flex-col gap-4 justify-center items-center -translate-y-[40px] md:-translate-y-[90px]">
-          <div className="text-5xl lg:text-9xl font-semibold text-center bg-[#0e100f] px-4">
+        <div className="flex flex-col gap-4 justify-center items-center -translate-y-[40px] md:-translate-y-[60px]">
+          <div className="text-5xl lg:text-7xl font-semibold text-center bg-[#0e100f] px-4">
             Tech <span className="primary">Stack</span>
           </div>
           <div className="text text-2xl opacity-50  text-center">

@@ -4,10 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { TextUtils } from "../utils";
 import { useEffect, useRef } from "react";
+import Gallery from "../components/gallery";
 
 /* Types */
 type TWorkType = {
-  imgPath?: string;
+  imgPath?: string[];
   projectName: string;
   desc: string;
   twColor?: string;
@@ -31,7 +32,7 @@ const works: TWorkType[] = [
     desc: "Track your progress with ease.",
     longDesc: `TrainMate is web application for users who want's to track their proggress when working out.`,
     techStack: ["reactJs", "firebase"],
-    imgPath: "/projects/trainmate.gif",
+    imgPath: ["/projects/trainmate.gif", "/projects/chappter.gif"],
     hexColor: "#4428f3",
     twColor: "text-[#4428f3]",
   },
@@ -40,7 +41,7 @@ const works: TWorkType[] = [
     desc: "Real Time Message App.",
     techStack: ["React Native", "firebase"],
     longDesc: `Chappter real-time chat applications developed with React Native.`,
-    imgPath: "/projects/chappter.gif",
+    imgPath: ["/projects/chappter.gif"],
     hexColor: "#1e90ff",
     twColor: "text-[#1e90ff]",
   },
@@ -49,7 +50,7 @@ const works: TWorkType[] = [
     desc: "Solution for Restaurants",
     techStack: ["nextJs", "typescript", "drizzle", "postgre"],
     longDesc: `Order Food Project helps restaurants easily add and update food prices. It also lets them create customized websites and menu designs to showcase their offerings.`,
-    imgPath: "/projects/orderFood.jpg",
+    imgPath: ["/projects/orderFood.jpg"],
     hexColor: "#fc0029",
     twColor: "text-[#fc0029]",
   },
@@ -58,7 +59,7 @@ const works: TWorkType[] = [
     desc: "Order&Track",
     techStack: ["reactJs", "firebase"],
     longDesc: `Pizzaria designed to only for Pizza restaurans to take order from customers and track it from admin panel.`,
-    imgPath: "/projects/pizzaria.jpg",
+    imgPath: ["/projects/pizzaria.jpg"],
     hexColor: "#ff002c",
     twColor: "text-[#ff002c]",
   },
@@ -133,15 +134,15 @@ const WorkComp = ({
           }  justify-center  flex flex-col w-full lg:w-1/2 `}
         >
           <p
-            className={`text-5xl lg:text-5xl font-semibold ${
+            className={`text-5xl lg:text-4xl font-semibold ${
               work.twColor ?? "primary"
             }`}
           >
             {work.projectName}
           </p>
-          <p className="text-5xl lg:text-8xl font-semibold mt-2">{work.desc}</p>
+          <p className="text-5xl lg:text-7xl font-semibold mt-2">{work.desc}</p>
           {work.longDesc && (
-            <p className="text-1xl lg:text-2xl mt-2 opacity-50">
+            <p className="text-1xl lg:text-xl mt-2 opacity-50">
               {work.longDesc}
             </p>
           )}
@@ -161,10 +162,7 @@ const WorkComp = ({
         </div>
 
         <div className="w-full h-[420px] lg:w-1/2">
-          <img
-            className="cursor-pointer duration-500 flex h-full w-full transition-all rounded-sm object-cover"
-            src={work.imgPath || "https://ui.shadcn.com/placeholder.svg"}
-          />
+          <Gallery imagePaths={work.imgPath} />
         </div>
       </div>
     </div>
