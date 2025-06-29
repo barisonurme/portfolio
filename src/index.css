@@ -12,6 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
   --color-primary: #c2ff9c;
   --color-secondary: #ffe59c;
+  --color-contrast: #fffce1;
 }
 
 body {

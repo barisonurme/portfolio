@@ -1,4 +1,5 @@
 /* Format Utils */
+import CustomButton from "../components/atoms/custom-button";
 import HamburgerMenu from "../components/hamburger-menu";
 import { TextUtils } from "../utils";
 
@@ -46,16 +47,28 @@ const Header = ({
         <div className="flex w-full border-b divider" />
       </section>
 
-      <section className="flex flex-col justify-center items-start md:items-center grow p-4">
-        <div className="headline primary text-5xl font-semibold">
-          Building DOM Elements
+      <section className="flex flex-col grow items-start md:items-center justify-center gap-8">
+        <div className="flex flex-col justify-center items-start md:items-center p-4">
+          <div className="headline primary text-5xl font-semibold">
+            Building DOM Elements
+          </div>
+          <p className="headline  text-6xl lg:text-9xl font-semibold">
+            with passion.
+          </p>
+          <p className="headlineDesc text text-2xl mt-4 opacity-50">
+            Whether it's crafting structure or fine-tuning every byte.
+          </p>
         </div>
-        <p className="headline  text-6xl lg:text-9xl font-semibold">
-          with passion.
-        </p>
-        <p className="headlineDesc text text-2xl mt-8 opacity-50">
-          Whether it's crafting structure or fine-tuning every byte.
-        </p>
+        <div className="flex gap-4 px-4">
+          <CustomButton
+            buttonProps={{
+              className:
+                "bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 duration-500  text-zinc-900",
+            }}
+          >
+            Projects
+          </CustomButton>
+        </div>
       </section>
 
       {/* Scroll Down Button */}
