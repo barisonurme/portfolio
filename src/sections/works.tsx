@@ -94,11 +94,10 @@ const WorkComp = ({
         {
           opacity: 0,
           x: index % 2 === 0 ? -100 : 100,
-          rotationX: 10,
+          rotationX: 20,
         },
         {
           opacity: 1,
-
           y: -100,
           rotationX: 0,
           x: 0,
@@ -106,7 +105,7 @@ const WorkComp = ({
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 100%",
-            end: "bottom 90%",
+            end: "bottom 50%",
             scrub: true, // smoothly link scroll to animation progress
           },
         }
@@ -121,11 +120,13 @@ const WorkComp = ({
   return (
     <div
       ref={containerRef}
-      className={`anim-${work.projectName} !z-50 flex flex-col px-24 md:px-24 ${
+      className={`anim-${
+        work.projectName
+      } !z-50 flex flex-col bg-zinc-900/20 border border-zinc-700/50 rounded-xl p-24 md:px-24 ${
         wrapperClass ?? ""
-      } w-full items-center fke h-[1000px]`}
+      } w-full items-center`}
     >
-      <div className="flex flex-col lg:flex-row w-full h-full items-start group gap-4 z-50">
+      <div className="flex flex-col lg:flex-row w-full h-full items-start md:items-center group gap-4 z-50">
         <div
           className={`${
             textWrapperClass ?? ""
@@ -217,7 +218,7 @@ const Works = () => {
           </div>
         </div>
       </div>
-      <section className="flex flex-col section mt-12">
+      <section className="flex flex-col section mt-12 gap-12">
         {/*  */}
         {/*  */}
         {/*  */}
