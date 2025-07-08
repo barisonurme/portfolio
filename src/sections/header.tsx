@@ -1,5 +1,3 @@
-/* Format Utils */
-import CustomButton from "../components/atoms/custom-button";
 import HamburgerMenu from "../components/hamburger-menu";
 import { TextUtils } from "../utils";
 
@@ -58,16 +56,6 @@ const Header = ({
           <p className="headlineDesc text text-2xl mt-4 opacity-50">
             Whether it's crafting structure or fine-tuning every byte.
           </p>
-        </div>
-        <div className="flex gap-4 px-4">
-          <CustomButton
-            buttonProps={{
-              className:
-                "bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 duration-500  text-zinc-900",
-            }}
-          >
-            Projects
-          </CustomButton>
         </div>
       </section>
 
