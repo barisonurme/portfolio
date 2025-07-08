@@ -28,14 +28,23 @@ type TWorkType = {
 /* Constants */
 const works: TWorkType[] = [
   {
+    projectName: "Pizzaria",
+    desc: "Order&Track",
+    techStack: ["reactJs", "firebase"],
+    longDesc: `Pizzaria designed to only for Pizza restaurans to take order from customers and track it from admin panel.`,
+    mediaPath: [
+      { path: "/projects/pizzaria.jpg" },
+      { path: "OoCiQ7yhu3k?si=4YQqsCP7SvdL7MfU", isYTVid: true },
+    ],
+    hexColor: "#ff002c",
+    twColor: "text-[#ff002c]",
+  },
+  {
     projectName: "TrainMate",
     desc: "Track your progress with ease.",
     longDesc: `TrainMate is web application for users who want's to track their proggress when working out.`,
     techStack: ["reactJs", "firebase"],
-    mediaPath: [
-      { path: "/projects/trainmate.gif" },
-      { path: "20E38xpgcD8?si=8o0euGMJSxJQNp1G", isYTVid: true },
-    ],
+    mediaPath: [{ path: "/projects/trainmate.gif" }],
     hexColor: "#4428f3",
     twColor: "text-[#4428f3]",
   },
@@ -59,18 +68,6 @@ const works: TWorkType[] = [
     mediaPath: [{ path: "/projects/orderFood.jpg" }],
     hexColor: "#fc0029",
     twColor: "text-[#fc0029]",
-  },
-  {
-    projectName: "Pizzaria",
-    desc: "Order&Track",
-    techStack: ["reactJs", "firebase"],
-    longDesc: `Pizzaria designed to only for Pizza restaurans to take order from customers and track it from admin panel.`,
-    mediaPath: [
-      { path: "/projects/pizzaria.jpg" },
-      { path: "OoCiQ7yhu3k?si=4YQqsCP7SvdL7MfU", isYTVid: true },
-    ],
-    hexColor: "#ff002c",
-    twColor: "text-[#ff002c]",
   },
 ];
 
