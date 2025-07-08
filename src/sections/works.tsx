@@ -8,7 +8,7 @@ import Gallery from "../components/gallery";
 
 /* Types */
 type TWorkType = {
-  imgPath?: string[];
+  mediaPath?: { path: string; isYTVid?: boolean }[];
   projectName: string;
   desc: string;
   twColor?: string;
@@ -32,7 +32,10 @@ const works: TWorkType[] = [
     desc: "Track your progress with ease.",
     longDesc: `TrainMate is web application for users who want's to track their proggress when working out.`,
     techStack: ["reactJs", "firebase"],
-    imgPath: ["/projects/trainmate.gif", "/projects/chappter.gif"],
+    mediaPath: [
+      { path: "/projects/trainmate.gif" },
+      { path: "20E38xpgcD8?si=8o0euGMJSxJQNp1G", isYTVid: true },
+    ],
     hexColor: "#4428f3",
     twColor: "text-[#4428f3]",
   },
@@ -41,7 +44,10 @@ const works: TWorkType[] = [
     desc: "Real Time Message App.",
     techStack: ["React Native", "firebase"],
     longDesc: `Chappter real-time chat applications developed with React Native.`,
-    imgPath: ["/projects/chappter.gif"],
+    mediaPath: [
+      { path: "/projects/chappter.gif" },
+      { path: "sZIic2ByJas?si=AFuhGI25P6AKBPyO", isYTVid: true },
+    ],
     hexColor: "#1e90ff",
     twColor: "text-[#1e90ff]",
   },
@@ -50,7 +56,7 @@ const works: TWorkType[] = [
     desc: "Solution for Restaurants",
     techStack: ["nextJs", "typescript", "drizzle", "postgre"],
     longDesc: `Order Food Project helps restaurants easily add and update food prices. It also lets them create customized websites and menu designs to showcase their offerings.`,
-    imgPath: ["/projects/orderFood.jpg"],
+    mediaPath: [{ path: "/projects/orderFood.jpg" }],
     hexColor: "#fc0029",
     twColor: "text-[#fc0029]",
   },
@@ -59,7 +65,10 @@ const works: TWorkType[] = [
     desc: "Order&Track",
     techStack: ["reactJs", "firebase"],
     longDesc: `Pizzaria designed to only for Pizza restaurans to take order from customers and track it from admin panel.`,
-    imgPath: ["/projects/pizzaria.jpg"],
+    mediaPath: [
+      { path: "/projects/pizzaria.jpg" },
+      { path: "OoCiQ7yhu3k?si=4YQqsCP7SvdL7MfU", isYTVid: true },
+    ],
     hexColor: "#ff002c",
     twColor: "text-[#ff002c]",
   },
@@ -148,7 +157,7 @@ const WorkComp = ({
         </div>
 
         <div className="w-full h-[420px] lg:w-1/2">
-          <Gallery imagePaths={work.imgPath} />
+          <Gallery mediaPaths={work.mediaPath} />
         </div>
       </div>
     </div>
