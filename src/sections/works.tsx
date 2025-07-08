@@ -119,25 +119,14 @@ const WorkComp = ({
   }, []);
 
   return (
+    /* prettier-ignore */
     <div
       ref={containerRef}
-      className={`anim-${
-        work.projectName
-      } !z-50 flex flex-col bg-zinc-900/20 border border-zinc-700/50 rounded-xl p-24 md:px-24 ${
-        wrapperClass ?? ""
-      } w-full items-center`}
+      className={`anim-${work.projectName} !z-50 flex flex-col bg-zinc-900/20 border border-zinc-700/50 rounded-xl p-24 md:px-24 ${wrapperClass ?? ""} w-full items-center`}
     >
       <div className="flex flex-col lg:flex-row w-full h-full items-start md:items-center group gap-4 z-50">
-        <div
-          className={`${
-            textWrapperClass ?? ""
-          }  justify-center  flex flex-col w-full lg:w-1/2 `}
-        >
-          <p
-            className={`text-5xl lg:text-4xl font-semibold ${
-              work.twColor ?? "primary"
-            }`}
-          >
+        <div className={`${textWrapperClass ?? ""}  justify-center  flex flex-col w-full lg:w-1/2 `}>
+          <p className={`text-5xl lg:text-4xl font-semibold ${work.twColor ?? "primary"}`}>
             {work.projectName}
           </p>
           <p className="text-5xl lg:text-7xl font-semibold mt-2">{work.desc}</p>
@@ -149,10 +138,7 @@ const WorkComp = ({
 
           <div className="grid gap-2 mt-12 grid-cols-12 pr-12">
             {work.techStack.map((stack) => (
-              <div
-                className="border opacity-50 p-2 px-4 rounded-md text-sm col-span-6 md:col-span-3"
-                key={`${work.projectName}-${stack}`}
-              >
+              <div className="border opacity-50 p-2 px-4 rounded-md text-sm col-span-6 md:col-span-3" key={`${work.projectName}-${stack}`}>
                 <div className="justify-center items-center flex w-full whitespace-nowrap">
                   {TextUtils.formatStringToTitleCase(stack)}
                 </div>
