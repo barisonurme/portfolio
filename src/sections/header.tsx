@@ -59,16 +59,6 @@ const Header = ({
             Whether it's crafting structure or fine-tuning every byte.
           </p>
         </div>
-        <div className="flex gap-4 px-4">
-          <CustomButton
-            buttonProps={{
-              className:
-                "bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/80 duration-500  text-zinc-900",
-            }}
-          >
-            Projects
-          </CustomButton>
-        </div>
       </section>
 
       {/* Scroll Down Button */}
